@@ -1,11 +1,11 @@
-# AutoMathText: Autonomous Data Selection (AutoDS) 
+# AutoMathText: Autonomous Data Selection (AutoDS)
 
 [![arXiv](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2402.07625)
 ![Python 3.10](https://img.shields.io/badge/python-3.10-green.svg)
 
 Homepage: https://auto-data-selection.github.io.
 
-## Introduction 
+## Introduction
 
 Official implementation of DPFM @ ICLR 2024 paper "AutoMathText: Autonomous Data Selection with Language Models for Mathematical Texts" (https://arxiv.org/abs/2402.07625).
 
@@ -13,7 +13,7 @@ Official implementation of DPFM @ ICLR 2024 paper "AutoMathText: Autonomous Data
 
 **AutoMathText** is an extensive and carefully curated dataset encompassing around **200 GB** of mathematical texts. It's a compilation sourced from a diverse range of platforms including various websites, arXiv, and GitHub (OpenWebMath, RedPajama, Algebraic Stack). This rich repository has been **autonomously selected (labeled) by the state-of-the-art open-source language model**, Qwen-72B. Each piece of content in the dataset is assigned **a score `lm_q1q2_score` within the range of [0, 1]**, reflecting its relevance, quality, and educational value in the context of mathematical intelligence.
 
-### Trending on Huggingface! 
+### Trending on Huggingface!
 
 Huggingface dataset: https://huggingface.co/datasets/math-ai/AutoMathText
 
@@ -31,7 +31,7 @@ The primary aim of the **AutoMathText** dataset is to provide a comprehensive an
 
 ### Zero-shot Data Selection without Alignment (SFT / RLHF)
 
-- Meta Prompt for Selecting OpenWebMath: 
+- Meta Prompt for Selecting OpenWebMath:
 
 ```XML
 """<system>
@@ -51,7 +51,8 @@ User: {
 2. Is the text suitable for educational purposes for YOURSELF in the field of mathematics? Reply with only YES or NO
 Assistant: 1."""
 ```
-- Meta Prompt for Selecting ArXiv: 
+
+- Meta Prompt for Selecting ArXiv:
 
 ```XML
 """<system>
@@ -60,7 +61,7 @@ mathematics and coding, particularly skilled in complex reasoning and problem-so
 In the following interaction, I will provide you with a text excerpt from the arXiv website.
 Your task is to evaluate whether this text contains elements of mathematical intelligence
 and if it is suitable for educational purposes for YOURSELF in the field of mathematics.
-Please respond with only YES or NO 
+Please respond with only YES or NO
 <\system>
 User: {
     "Title": "{title}",
@@ -72,7 +73,7 @@ User: {
 Assistant: 1."""
 ```
 
-- Meta Prompt for Selecting Github: 
+- Meta Prompt for Selecting Github:
 
 ```XML
 """<system>
@@ -96,7 +97,6 @@ Assistant: 1."""
 #### The LM-Score Function
 
 <img src="./images/lm-score.png" alt="LM-Score Function">
-
 
 ## Dataset Usage with Huggingface API
 
@@ -142,7 +142,8 @@ ds = load_dataset("math-ai/AutoMathText", "web-0.50-to-1.00") # or any valid con
 - RedPajama [[link]](https://huggingface.co/datasets/togethercomputer/RedPajama-Data-1T)
 - Algebraic Stack [[link]](https://huggingface.co/datasets/EleutherAI/proof-pile-2) (a subset of Proof-Pile-2)
 
-## Citation 
+## Citation
+
 We appreciate your use of **AutoMathText** in your work. If you find this repository helpful, please consider citing it and star this repo. Feel free to contact zhangyif21@mails.tsinghua.edu.cn or open an issue if you have any questions.
 
 ```bibtex
@@ -153,3 +154,5 @@ We appreciate your use of **AutoMathText** in your work. If you find this reposi
   year={2024}
 }
 ```
+
+<!-- rlagkwls -->
